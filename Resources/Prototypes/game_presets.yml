@@ -120,7 +120,7 @@
     - secret
     - sekrit
   name: secret-title
-  showInVote: true
+  showInVote: false
   description: secret-description
   rules:
     - Secret
@@ -154,13 +154,12 @@
   - BasicRoundstartVariation
 
 - type: gamePreset
-  id: Deathmatch
+  id: Deathmatch #DM VANILLA
   alias:
     - deathmatch
     - dm
-  name: death-match-title
-  description: death-match-description
-  maxPlayers: 15
+  name: death-match-title #rename to dm vanilla
+  description: death-match-description #change this aswell
   showInVote: true
   supportedMaps: DeathMatchMapPool
   rules:
