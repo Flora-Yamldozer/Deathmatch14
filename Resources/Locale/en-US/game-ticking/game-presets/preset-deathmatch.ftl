@@ -1,5 +1,5 @@
-death-match-title = DeathMatch
-death-match-description = Kill anything that moves! Normal roleplay need not apply. The first to 31 points wins!
+death-match-title = Deathmatch Vanilla
+death-match-description = Vanilla Deathmatch, first to 31 kills wins!
 
 death-match-name-player = [bold]{$name}[/bold] ([italic]{$username}[/italic])
 death-match-name-npc = [bold]{$name}[/bold]
