@@ -7,7 +7,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 16
+        Piercing: 20 #Deathmatch 14
 
 - type: entity
   parent: BaseBulletPractice
@@ -18,7 +18,8 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 2
+        Blunt: 1 #Deathmatch14
+        Piercing: 1 #Deathmatch14
 
 - type: entity
   parent: BaseBulletIncendiary
@@ -30,7 +31,7 @@
     damage:
       types:
         Piercing: 12
-        Heat: 4
+        Heat: 12 #Deathmatch14
 
 - type: entity
   parent: BaseBulletUranium
@@ -41,5 +42,6 @@
   - type: Projectile
     damage:
       types:
-        Radiation: 6
+        Radiation: 8 #Deathmatch14
+        Heat: 2 #Deathmatch14
         Piercing: 10
