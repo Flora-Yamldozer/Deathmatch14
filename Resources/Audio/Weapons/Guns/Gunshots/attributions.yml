@@ -13,7 +13,7 @@
   copyright: "Grappling hook by 16bitstudios. Converted to .OGG and MONO by metalgearsloth"
   source: "https://freesound.org/people/16bitstudios/sounds/541975/"
 
-- files: ["atreides.ogg", "c-20r.ogg", "flaregun.ogg", "mateba.ogg", "minigun.ogg", "mk58.ogg"]
+- files: ["atreides.ogg", "c-20r.ogg", "flaregun.ogg", "mateba.ogg", "minigun.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Taken from CM-SS13"
   source: "https://gitlab.com/cmdevs/colonial-warfare/-/tree/32cb5892413243cc74bb2d11df8e3085f8ef1164/sound/weapons"
@@ -62,3 +62,8 @@
   license: "CC0-1.0"
   copyright: "Created by northern87, edited by beck-thompson (github)"
   source: "https://freesound.org/people/northern87/sounds/88532/"
+
+- files: ["mk58.ogg"]
+  license: "Unknown/Pixabay"
+  copyright: "freesound_community on Pixabay"
+  source: "https://pixabay.com/sound-effects/film-special-effects-single-gunshot-43-79835/"
