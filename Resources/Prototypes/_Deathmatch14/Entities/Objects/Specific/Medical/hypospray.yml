@@ -1,0 +1,22 @@
+- type: entity
+  parent: ChemicalMedipen
+  id: MethPen
+  name: super medipen
+  description: A shot that'll get you patched up in no time 
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: meth
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: meth_empty
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Omnizine
+        Quantity: 50
+      - ReagentId: Epinephrine
+        Quantity: 20
