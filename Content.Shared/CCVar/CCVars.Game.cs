@@ -43,7 +43,7 @@ public sealed partial class CCVars
     ///     Controls the duration of the lobby timer in seconds. Defaults to 2 minutes and 30 seconds.
     /// </summary>
     public static readonly CVarDef<int>
-        GameLobbyDuration = CVarDef.Create("game.lobbyduration", 150, CVar.ARCHIVE);
+        GameLobbyDuration = CVarDef.Create("game.lobbyduration", 60, CVar.ARCHIVE);
 
     /// <summary>
     ///     Controls if players can latejoin at all.
@@ -55,25 +55,25 @@ public sealed partial class CCVars
     ///     Controls the default game preset.
     /// </summary>
     public static readonly CVarDef<string>
-        GameLobbyDefaultPreset = CVarDef.Create("game.defaultpreset", "secret", CVar.ARCHIVE);
+        GameLobbyDefaultPreset = CVarDef.Create("game.defaultpreset", "deathmatch", CVar.ARCHIVE);
 
     /// <summary>
     ///     Controls if the game can force a different preset if the current preset's criteria are not met.
     /// </summary>
     public static readonly CVarDef<bool>
-        GameLobbyFallbackEnabled = CVarDef.Create("game.fallbackenabled", true, CVar.ARCHIVE);
+        GameLobbyFallbackEnabled = CVarDef.Create("game.fallbackenabled", false, CVar.ARCHIVE);
 
     /// <summary>
     ///     The preset for the game to fall back to if the selected preset could not be used, and fallback is enabled.
     /// </summary>
     public static readonly CVarDef<string>
-        GameLobbyFallbackPreset = CVarDef.Create("game.fallbackpreset", "Traitor,Extended", CVar.ARCHIVE);
+        GameLobbyFallbackPreset = CVarDef.Create("game.fallbackpreset", "deathmatch", CVar.ARCHIVE);
 
     /// <summary>
     ///     The preset for the game to fall back to if the selected preset could not be used, and fallback is enabled.
     /// </summary>
     public static readonly CVarDef<string>
-        GameTickerIgnoredPresets = CVarDef.Create("game.ignoredpresets", "", CVar.ARCHIVE);
+        GameTickerIgnoredPresets = CVarDef.Create("game.ignoredpresets", "deathmatch", CVar.ARCHIVE);
 
     /// <summary>
     ///     Controls if people can win the game in Suspicion or Deathmatch.
@@ -91,7 +91,7 @@ public sealed partial class CCVars
     ///     Controls the maximum number of character slots a player is allowed to have.
     /// </summary>
     public static readonly CVarDef<int>
-        GameMaxCharacterSlots = CVarDef.Create("game.maxcharacterslots", 30, CVar.ARCHIVE | CVar.REPLICATED | CVar.SERVER);
+        GameMaxCharacterSlots = CVarDef.Create("game.maxcharacterslots", 3, CVar.ARCHIVE | CVar.REPLICATED | CVar.SERVER);
 
     /// <summary>
     ///     Controls the game map prototype to load. SS14 stores these prototypes in Prototypes/Maps.
@@ -129,19 +129,19 @@ public sealed partial class CCVars
     ///     Is map rotation enabled?
     /// </summary>
     public static readonly CVarDef<bool>
-        GameMapRotation = CVarDef.Create("game.map_rotation", true, CVar.SERVERONLY);
+        GameMapRotation = CVarDef.Create("game.map_rotation", false, CVar.SERVERONLY);
 
     /// <summary>
     ///     If roles should be restricted based on time.
     /// </summary>
     public static readonly CVarDef<bool>
-        GameRoleTimers = CVarDef.Create("game.role_timers", true, CVar.SERVER | CVar.REPLICATED);
+        GameRoleTimers = CVarDef.Create("game.role_timers", false, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     /// If role loadout items should be restricted based on time.
     /// </summary>
     public static readonly CVarDef<bool>
-        GameRoleLoadoutTimers = CVarDef.Create("game.role_loadout_timers", true, CVar.SERVER | CVar.REPLICATED);
+        GameRoleLoadoutTimers = CVarDef.Create("game.role_loadout_timers", false, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     ///     Override default role requirements using a <see cref="JobRequirementOverridePrototype"/>
@@ -153,7 +153,7 @@ public sealed partial class CCVars
     ///     If roles should be restricted based on whether or not they are whitelisted.
     /// </summary>
     public static readonly CVarDef<bool>
-        GameRoleWhitelist = CVarDef.Create("game.role_whitelist", true, CVar.SERVER | CVar.REPLICATED);
+        GameRoleWhitelist = CVarDef.Create("game.role_whitelist", false, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     ///     Determines how unfilled round-start minimum job slots fall back when no player prefers the job.
@@ -179,7 +179,7 @@ public sealed partial class CCVars
         CVarDef.Create("game.diagonalmovement", true, CVar.ARCHIVE);
 
     public static readonly CVarDef<int> SoftMaxPlayers =
-        CVarDef.Create("game.soft_max_players", 30, CVar.SERVERONLY | CVar.ARCHIVE);
+        CVarDef.Create("game.soft_max_players", 8, CVar.SERVERONLY | CVar.ARCHIVE);
 
     /// <summary>
     ///     If a player gets denied connection to the server,
@@ -192,20 +192,20 @@ public sealed partial class CCVars
     ///     Whether or not panic bunker is currently enabled.
     /// </summary>
     public static readonly CVarDef<bool> PanicBunkerEnabled =
-        CVarDef.Create("game.panic_bunker.enabled", false, CVar.NOTIFY | CVar.REPLICATED | CVar.SERVER);
+        CVarDef.Create("game.panic_bunker.enabled", true, CVar.NOTIFY | CVar.REPLICATED | CVar.SERVER);
 
     /// <summary>
     ///     Whether or not the panic bunker will disable when an admin comes online.
     /// </summary>
     public static readonly CVarDef<bool> PanicBunkerDisableWithAdmins =
-        CVarDef.Create("game.panic_bunker.disable_with_admins", false, CVar.SERVERONLY);
+        CVarDef.Create("game.panic_bunker.disable_with_admins", true, CVar.SERVERONLY);
 
     /// <summary>
     ///     Whether or not the panic bunker will enable when no admins are online.
     ///     This counts everyone with the 'Admin' AdminFlag.
     /// </summary>
     public static readonly CVarDef<bool> PanicBunkerEnableWithoutAdmins =
-        CVarDef.Create("game.panic_bunker.enable_without_admins", false, CVar.SERVERONLY);
+        CVarDef.Create("game.panic_bunker.enable_without_admins", true, CVar.SERVERONLY);
 
     /// <summary>
     ///     Whether or not the panic bunker will count deadminned admins for
@@ -213,25 +213,25 @@ public sealed partial class CCVars
     ///     <see cref="PanicBunkerEnableWithoutAdmins"/>
     /// </summary>
     public static readonly CVarDef<bool> PanicBunkerCountDeadminnedAdmins =
-        CVarDef.Create("game.panic_bunker.count_deadminned_admins", false, CVar.SERVERONLY);
+        CVarDef.Create("game.panic_bunker.count_deadminned_admins", true, CVar.SERVERONLY);
 
     /// <summary>
     ///     Show reason of disconnect for user or not.
     /// </summary>
     public static readonly CVarDef<bool> PanicBunkerShowReason =
-        CVarDef.Create("game.panic_bunker.show_reason", false, CVar.SERVERONLY);
+        CVarDef.Create("game.panic_bunker.show_reason", true, CVar.SERVERONLY);
 
     /// <summary>
     ///     Minimum age of the account (from server's PoV, so from first-seen date) in minutes.
     /// </summary>
     public static readonly CVarDef<int> PanicBunkerMinAccountAge =
-        CVarDef.Create("game.panic_bunker.min_account_age", 1440, CVar.SERVERONLY);
+        CVarDef.Create("game.panic_bunker.min_account_age", 1200, CVar.SERVERONLY);
 
     /// <summary>
     ///     Minimal overall played time.
     /// </summary>
     public static readonly CVarDef<int> PanicBunkerMinOverallMinutes =
-        CVarDef.Create("game.panic_bunker.min_overall_minutes", 600, CVar.SERVERONLY);
+        CVarDef.Create("game.panic_bunker.min_overall_minutes", 20, CVar.SERVERONLY);
 
     /// <summary>
     ///     A custom message that will be used for connections denied to the panic bunker
@@ -332,7 +332,7 @@ public sealed partial class CCVars
     /// Trust me you want one.
     /// </remarks>
     public static readonly CVarDef<TimeSpan> GameIPIntelExemptPlaytime =
-        CVarDef.Create("game.ipintel_exempt_playtime", TimeSpan.FromMinutes(300), CVar.SERVERONLY);
+        CVarDef.Create("game.ipintel_exempt_playtime", TimeSpan.FromMinutes(1), CVar.SERVERONLY);
 
     /// <summary>
     /// Rating to reject at. Anything equal to or higher than this will reject the connection.
@@ -344,13 +344,13 @@ public sealed partial class CCVars
     /// Rating to send an admin warning over, but not reject the connection. Set to 0 to disable
     /// </summary>
     public static readonly CVarDef<float> GameIPIntelAlertAdminWarnRating =
-        CVarDef.Create("game.ipintel_alert_admin_warn_rating", 0f, CVar.SERVERONLY);
+        CVarDef.Create("game.ipintel_alert_admin_warn_rating", 0.4f, CVar.SERVERONLY);
 
     /// <summary>
     ///     Should clumsy people bonk when trying to climb certain objects like tables?
     /// </summary>
     public static readonly CVarDef<bool> GameTableBonk =
-        CVarDef.Create("game.table_bonk", true, CVar.REPLICATED);
+        CVarDef.Create("game.table_bonk", false, CVar.REPLICATED);
 
     /// <summary>
     ///     Whether or not status icons are rendered for everyone.
@@ -376,7 +376,7 @@ public sealed partial class CCVars
     ///     Set to 0 or a negative number to disable.
     /// </summary>
     public static readonly CVarDef<int> RoundStartFailShutdownCount =
-        CVarDef.Create("game.round_start_fail_shutdown_count", 5, CVar.SERVERONLY | CVar.SERVER);
+        CVarDef.Create("game.round_start_fail_shutdown_count", 2, CVar.SERVERONLY | CVar.SERVER);
 #endif
 
     /// <summary>
@@ -390,7 +390,7 @@ public sealed partial class CCVars
     ///     Defaults to 2 minutes.
     /// </summary>
     public static readonly CVarDef<float> RoundRestartTime =
-        CVarDef.Create("game.round_restart_time", 120f, CVar.SERVERONLY);
+        CVarDef.Create("game.round_restart_time", 60f, CVar.SERVERONLY);
 
     /// <summary>
     ///     The prototype to use for secret weights.
@@ -410,7 +410,7 @@ public sealed partial class CCVars
     ///     but may cause lag during round end with very high player counts.
     /// </summary>
     public static readonly CVarDef<bool> RoundEndPVSOverrides =
-        CVarDef.Create("game.round_end_pvs_overrides", true, CVar.SERVERONLY);
+        CVarDef.Create("game.round_end_pvs_overrides", false, CVar.SERVERONLY);
 
     /// <summary>
     ///     If true, players can place objects onto tabletop games like chess boards.
@@ -426,7 +426,7 @@ public sealed partial class CCVars
     ///     If true, contraband severity can be viewed in the examine menu
     /// </summary>
     public static readonly CVarDef<bool> ContrabandExamine =
-        CVarDef.Create("game.contraband_examine", true, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("game.contraband_examine", false, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     ///     If true, contraband examination is only possible while wearing an item with `ShowContrabandDetailsComponent`. Requires `ContrabandExamine` to be true as well.
@@ -444,7 +444,7 @@ public sealed partial class CCVars
     ///     Should the clients window show the server hostname in the title?
     /// </summary>
     public static readonly CVarDef<bool> GameHostnameInTitlebar =
-        CVarDef.Create("game.hostname_in_titlebar", true, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("game.hostname_in_titlebar", false, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     /// The maximum amount of tiles you can stack on top of each other. 0 is unlimited.
@@ -453,7 +453,7 @@ public sealed partial class CCVars
     /// Having it too high can result in "doomstacking" tiles - this messes with efficiency of explosions, deconstruction of tiles, and might result in memory problems.
     /// </remarks>
     public static readonly CVarDef<int> TileStackLimit =
-        CVarDef.Create("game.tile_stack_limit", 5, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("game.tile_stack_limit", 3, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     /// The list of jobs that will be enabled on newly created characters.
